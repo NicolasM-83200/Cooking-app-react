@@ -1,0 +1,26 @@
+$font-1: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+$color-1: rgb(235, 244, 242);
+$color-2: #16d9e7;
+$color-3: #36ca79;
+$box-shadow-form: 0 1px 10px rgba(0, 0, 0, 0.054);
+$box-shadow-card: 0 1px 10px rgba(0, 0, 0, 0.084);
+$box-shadow-img: 0 1px 10px rgba(0, 0, 0, 0.304);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+body {
+  background: $color-1;
+  font-family: $font-1;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+li {
+  list-style-type: none;
+}

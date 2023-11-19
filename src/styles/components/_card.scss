@@ -1,0 +1,28 @@
+.card {
+  flex: 1 0 25%;
+  min-width: 240px;
+  max-width: 380px;
+  background: white;
+  margin: 10px;
+  border-radius: 5px;
+  padding: 10px 20px;
+  box-shadow: $box-shadow-card;
+
+  h2,
+  h3 {
+    margin: 6px auto;
+    color: $color-2;
+  }
+
+  p {
+    color: $color-3;
+  }
+
+  .img > img {
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: $box-shadow-img;
+  }
+}

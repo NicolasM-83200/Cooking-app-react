@@ -1,0 +1,27 @@
+form {
+  position: fixed;
+  left: 50%;
+  z-index: 100;
+  transform: translateX(-50%);
+  background: white;
+  width: 340px;
+  padding: 6px 20px;
+  border-radius: 0 0 6px 6px;
+  box-shadow: $box-shadow-form;
+
+  input {
+    border: 1px solid rgb(235, 244, 242);
+    background: rgb(235, 244, 242);
+    color: #16d9e7;
+    outline: none;
+    border-radius: 5px;
+    height: 30px;
+    margin: 10px 0 5px;
+    width: 270px;
+    font-size: 1.2rem;
+    transition: 0.2s;
+  }
+  &:focus {
+    border: 1px solid #16d9e7;
+  }
+}
