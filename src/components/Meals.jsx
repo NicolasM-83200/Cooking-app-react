@@ -4,16 +4,31 @@ import Card from "./Card";
 
 const Meals = () => {
   const [data, setData] = useState([]);
-  const [value, setValue] = useState("");
+  // const [value, setValue] = useState("");
+
+  // useEffect(() => {
+  //   axios
+  //     .get("https://www.themealdb.com/api/json/v1/1/search.php?s=" + value)
+  //     .then((res) => setData(res.data.meals));
+  // }, [value]);
+
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
-    axios
-      .get("https://www.themealdb.com/api/json/v1/1/search.php?s=" + value)
-      .then((res) => setData(res.data.meals));
-  }, [value]);
+    if (search.trim() === "") {
+      axios
+        .get("https://www.themealdb.com/api/json/v1/1/search.php?s=")
+        .then((res) => setData(res.data.meals));
+    } else {
+      axios
+        .get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
+        .then((res) => setData(res.data.meals));
+    }
+  }, [search]);
 
   function handleChange(e) {
-    setValue(e.target.value);
+    // setValue(e.target.value);
+    setSearch(e.target.value);
   }
 
   return (
@@ -23,15 +38,13 @@ const Meals = () => {
         <input
           type="text"
           id="search"
-          value={value}
+          value={search}
           onChange={handleChange}
           placeholder="ex: Beef"
         />
       </form>
       <ul>
-        {data.map((meal) => (
-          <Card key={meal.idMeal} meal={meal} />
-        ))}
+        {data && data.map((meal) => <Card key={meal.idMeal} meal={meal} />)}
       </ul>
     </div>
   );
